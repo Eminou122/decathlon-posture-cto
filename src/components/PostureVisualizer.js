@@ -118,10 +118,11 @@ const PostureVisualizer = ({ exercise, language }) => {
     if (animationPlaying) {
       const interval = setInterval(() => {
         setAngle(prev => (prev + 5) % 360);
+        console.log(angle);
       }, 50);
       return () => clearInterval(interval);
     }
-  }, [animationPlaying]);
+  }, [animationPlaying, angle]);
 
   const renderVisualization = () => {
     switch (exercise.id) {
